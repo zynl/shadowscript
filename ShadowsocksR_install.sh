@@ -16,7 +16,7 @@ cat <<EOF > /etc/shadowsocks.json
     "password": "uEVvMvE29Lxo6XsRDWdB2UMc",
     "timeout": 120,
     "method": "aes-256-cfb",
-    "protocol": "verify_simple",
+    "protocol": "origin",
     "protocol_param": "",
     "obfs": "http_simple",
     "obfs_param": "",
@@ -26,3 +26,4 @@ cat <<EOF > /etc/shadowsocks.json
     "workers": 1
 }
 EOF
+python DIR/server.py -c /etc/shadowsocks.json -d start
